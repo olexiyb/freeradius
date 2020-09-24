@@ -11,13 +11,13 @@ services:
       - 1813:1813/udp
     volumes:
       - /etc/localtime:/etc/localtime:ro
-#      - ./clients.conf:/etc/raddb/clients.conf
-#      - ./radiusd.conf:/etc/raddb/radiusd.conf
-#      - ./authorize:/etc/raddb/mods-config/files/authorize
-#      - ./certs:/etc/freeradius/certs
+      - ./clients.conf:/etc/raddb/clients.conf
+      - ./radiusd.conf:/etc/raddb/radiusd.conf
+      - ./authorize:/etc/raddb/mods-config/files/authorize
+      - ./certs:/etc/freeradius/certs
     environment:
       - TZ=UTC
-#      - RADIUSD_OPTS=-xx # Enable this for FreeRadius extra log verbosity/degub
+      - RADIUSD_OPTS=-xx # Enable this for FreeRadius extra log verbosity/degub
 
   freeradius-test:
     image: goofball222/freeradius
